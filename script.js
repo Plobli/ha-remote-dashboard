@@ -11,12 +11,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
             const data = await response.json();
-            updateUI(sensor.name, sensor.entity_id, data.state);
+            updateUI(sensor.name, sensor.entity_id, data.state, sensor.unit);
         }
     }
 
-    function updateUI(name, id, state) {
-        let stateDisplay = state === 'on' ? 'Nein' : state === 'off' ? 'Ja' : state;
+    function updateUI(name, id, state, unit) {
+        let stateDisplay = state === 'on' ? 'Nein' : state === 'off' ? 'Ja' : `${state} ${unit || ''}`;
         let colorClass = state === 'on' ? 'sensor-on' : state === 'off' ? 'sensor-off' : 'default-color';
 
         let tile = document.getElementById(id);
