@@ -1,6 +1,6 @@
 {
     "host": "192.168.100.131:8123",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJlMmE4NzRmYzRhMjU0YTdlYjhmODk4M2M3NzY2YmRhZiIsImlhdCI6MTcxNDE2MTMyMSwiZXhwIjoyMDI5NTIxMzIxfQ.5nfeCHGt2t6hxMjuDouyLbsBv0zySaOFBAYlHOJRbW8",
+    "token": "ACCESS-TOKEN",
     "sensors": [
         {
             "name": "Sonnenstrom-Überschuss",
