@@ -3,11 +3,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     async function fetchData() {
         const configResponse = await fetch('config.json');
-        const sensors = await configResponse.json();
+        const config = await configResponse.json();
+        const { host, token, sensors } = config;
 
         for (let sensor of sensors) {
-            const response = await fetch(`http://${sensor.host}/api/states/${sensor.entity_id}`, {
-                headers: { 'Authorization': `Bearer ${sensor.token}` }
+            const response = await fetch(`http://${host}/api/states/${sensor.entity_id}`, {
+                headers: { 'Authorization': `Bearer ${token}` }
             });
             const data = await response.json();
             updateUI(sensor.name, sensor.entity_id, data.state);
@@ -16,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function updateUI(name, id, state) {
         let stateDisplay = state === 'on' ? 'Nein' : state === 'off' ? 'Ja' : state;
-        let colorClass = state === 'on' ? 'sensor-on' : state === 'off' ? 'sensor-off' : '';
+        let colorClass = state === 'on' ? 'sensor-on' : state === 'off' ? 'sensor-off' : 'default-color';
 
         let tile = document.getElementById(id);
         if (!tile) {
