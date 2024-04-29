@@ -1,0 +1,19 @@
+{
+    "home_assistant_ip": "a7r4lfibzp3vzjqpmvhp3bw6wd6reo4z.ui.nabu.casa",
+    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJlMmE4NzRmYzRhMjU0YTdlYjhmODk4M2M3NzY2YmRhZiIsImlhdCI6MTcxNDE2MTMyMSwiZXhwIjoyMDI5NTIxMzIxfQ.5nfeCHGt2t6hxMjuDouyLbsBv0zySaOFBAYlHOJRbW8",
+	"sensors": [
+        {
+            "entity_id": "binary_sensor.pv_momentanverbrauch",
+            "custom_text": "Sonnenstrom-Überschuss"
+        },
+        {
+            "entity_id": "sensor.pv_netzeinspeisung_leistung",
+            "custom_text": "Höhe des Sonnenstrom-Überschuss"
+        },
+		{
+			"entity_id": "sensor.strom_haus_momentanverbrauch_ohne_heizstab_watt",
+            "custom_text": "Aktueller Stromverbrauch des Hauses"
+		}
+
+    ]
+}
